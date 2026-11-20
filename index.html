@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#172033">
+
+    <title>Chess Puzzle Bot</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <div class="logo">♟</div>
+
+            <div>
+                <h1>Chess Puzzle</h1>
+                <p>معمای شطرنج</p>
+            </div>
+        </header>
+
+        <section class="info-card">
+            <div class="status-title">
+                <span>🎯</span>
+                <strong>حرکت خود را پیدا کنید</strong>
+            </div>
+
+            <p id="status">
+                مهره موردنظر را انتخاب و به خانه مقصد بکشید.
+            </p>
+
+            <div class="turn-info">
+                <span>نوبت حرکت:</span>
+                <strong id="turn">سفید</strong>
+            </div>
+        </section>
+
+        <section class="board-section">
+
+            <div class="board-wrapper">
+
+                <div class="rank-labels" id="rankLabels"></div>
+
+                <div class="board" id="board"></div>
+
+                <div class="file-labels" id="fileLabels"></div>
+
+            </div>
+
+        </section>
+
+        <section class="move-info">
+            <div>
+                <span>حرکت انتخاب‌شده:</span>
+                <strong id="selectedMove">---</strong>
+            </div>
+        </section>
+
+        <section class="controls">
+
+            <button id="undoButton" class="secondary">
+                ↶ بازگشت حرکت
+            </button>
+
+            <button id="submitButton" class="primary" disabled>
+                ✓ ثبت حرکت
+            </button>
+
+        </section>
+
+        <button id="cancelButton" class="cancel">
+            انصراف
+        </button>
+
+        <div id="promotionModal" class="modal hidden">
+
+            <div class="modal-content">
+
+                <h3>انتخاب مهره برای ترفیع</h3>
+
+                <div class="promotion-options">
+
+                    <button data-piece="q">♛</button>
+                    <button data-piece="r">♜</button>
+                    <button data-piece="b">♝</button>
+                    <button data-piece="n">♞</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            Chess Puzzle Bot
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
